@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2018.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2018.3/system/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_EvoLisa.185752769.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="Core" t="IncludeRecursive">
+        <e p="GenArt.Core.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="EvoLisa.sln" t="IncludeFlat" />
+      <e p="Gui" t="IncludeRecursive">
+        <e p="GenArt.csproj" t="IncludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
