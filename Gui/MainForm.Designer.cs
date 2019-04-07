@@ -2,15 +2,10 @@
 {
     partial class MainForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+     
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -30,12 +25,8 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.tmrRedraw = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.fileMenu = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sourceImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.genFrame = new GenArt.Canvas();
+            this.button_open = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelFitness = new System.Windows.Forms.ToolStripStatusLabel();
@@ -46,8 +37,8 @@
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelPolygons = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.genFrame = new GenArt.Canvas();
             ((System.ComponentModel.ISupportInitialize)(this.sourceImage)).BeginInit();
-            this.fileMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,7 +61,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(15, 8);
+            this.label1.Location = new System.Drawing.Point(9, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 18);
             this.label1.TabIndex = 4;
@@ -79,12 +70,11 @@
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.White;
-            this.btnStart.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnStart.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnStart.Location = new System.Drawing.Point(0, 580);
+            this.btnStart.Location = new System.Drawing.Point(0, 617);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(230, 41);
+            this.btnStart.Size = new System.Drawing.Size(230, 39);
             this.btnStart.TabIndex = 6;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = false;
@@ -100,53 +90,17 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(3, 2);
+            this.label2.Location = new System.Drawing.Point(18, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 18);
             this.label2.TabIndex = 7;
             this.label2.Text = "Generated image";
             // 
-            // fileMenu
-            // 
-            this.fileMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.fileMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.fileMenu.Location = new System.Drawing.Point(0, 24);
-            this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(1072, 26);
-            this.fileMenu.TabIndex = 14;
-            this.fileMenu.Text = "menu";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
-            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 22);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sourceImageToolStripMenuItem});
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // sourceImageToolStripMenuItem
-            // 
-            this.sourceImageToolStripMenuItem.Name = "sourceImageToolStripMenuItem";
-            this.sourceImageToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.sourceImageToolStripMenuItem.Text = "Source Image";
-            this.sourceImageToolStripMenuItem.Click += new System.EventHandler(this.sourceImageToolStripMenuItem_Click);
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 50);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -154,25 +108,28 @@
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.btnStart);
             this.splitContainer1.Panel1.Controls.Add(this.sourceImage);
+            this.splitContainer1.Panel1.Controls.Add(this.button_open);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.genFrame);
-            this.splitContainer1.Size = new System.Drawing.Size(1072, 621);
+            this.splitContainer1.Size = new System.Drawing.Size(984, 656);
             this.splitContainer1.SplitterDistance = 230;
             this.splitContainer1.TabIndex = 21;
             // 
-            // genFrame
+            // button_open
             // 
-            this.genFrame.BackColor = System.Drawing.Color.White;
-            this.genFrame.ForeColor = System.Drawing.Color.Black;
-            this.genFrame.Location = new System.Drawing.Point(21, 31);
-            this.genFrame.Name = "genFrame";
-            this.genFrame.Padding = new System.Windows.Forms.Padding(5);
-            this.genFrame.Size = new System.Drawing.Size(512, 512);
-            this.genFrame.TabIndex = 1;
-            this.genFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCanvas_Paint);
+            this.button_open.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_open.Font = new System.Drawing.Font("Showcard Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_open.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button_open.Location = new System.Drawing.Point(0, 570);
+            this.button_open.Name = "button_open";
+            this.button_open.Size = new System.Drawing.Size(230, 41);
+            this.button_open.TabIndex = 6;
+            this.button_open.Text = "Open image";
+            this.button_open.UseVisualStyleBackColor = false;
+            this.button_open.Click += new System.EventHandler(this.button_open_Click);
             // 
             // statusStrip1
             // 
@@ -188,7 +145,7 @@
             this.toolStripStatusLabelPolygons});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1072, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(984, 24);
             this.statusStrip1.TabIndex = 26;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -207,7 +164,7 @@
             this.toolStripStatusLabelFitness.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripStatusLabelFitness.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripStatusLabelFitness.Name = "toolStripStatusLabelFitness";
-            this.toolStripStatusLabelFitness.Size = new System.Drawing.Size(167, 19);
+            this.toolStripStatusLabelFitness.Size = new System.Drawing.Size(145, 19);
             this.toolStripStatusLabelFitness.Spring = true;
             // 
             // toolStripStatusLabel2
@@ -223,7 +180,7 @@
             this.toolStripStatusLabelGeneration.AutoSize = false;
             this.toolStripStatusLabelGeneration.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripStatusLabelGeneration.Name = "toolStripStatusLabelGeneration";
-            this.toolStripStatusLabelGeneration.Size = new System.Drawing.Size(167, 19);
+            this.toolStripStatusLabelGeneration.Size = new System.Drawing.Size(145, 19);
             this.toolStripStatusLabelGeneration.Spring = true;
             // 
             // toolStripStatusLabel3
@@ -239,7 +196,7 @@
             this.toolStripStatusLabelSelected.AutoSize = false;
             this.toolStripStatusLabelSelected.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripStatusLabelSelected.Name = "toolStripStatusLabelSelected";
-            this.toolStripStatusLabelSelected.Size = new System.Drawing.Size(167, 19);
+            this.toolStripStatusLabelSelected.Size = new System.Drawing.Size(145, 19);
             this.toolStripStatusLabelSelected.Spring = true;
             // 
             // toolStripStatusLabel5
@@ -255,8 +212,20 @@
             this.toolStripStatusLabelPolygons.AutoSize = false;
             this.toolStripStatusLabelPolygons.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripStatusLabelPolygons.Name = "toolStripStatusLabelPolygons";
-            this.toolStripStatusLabelPolygons.Size = new System.Drawing.Size(167, 19);
+            this.toolStripStatusLabelPolygons.Size = new System.Drawing.Size(145, 19);
             this.toolStripStatusLabelPolygons.Spring = true;
+           
+            // 
+            // genFrame
+            // 
+            this.genFrame.BackColor = System.Drawing.Color.White;
+            this.genFrame.ForeColor = System.Drawing.Color.Black;
+            this.genFrame.Location = new System.Drawing.Point(21, 31);
+            this.genFrame.Name = "genFrame";
+            this.genFrame.Padding = new System.Windows.Forms.Padding(5);
+            this.genFrame.Size = new System.Drawing.Size(512, 512);
+            this.genFrame.TabIndex = 1;
+            this.genFrame.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCanvas_Paint);
             // 
             // MainForm
             // 
@@ -264,19 +233,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1072, 671);
+            this.ClientSize = new System.Drawing.Size(984, 680);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.fileMenu);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.fileMenu;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GA";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sourceImage)).EndInit();
-            this.fileMenu.ResumeLayout(false);
-            this.fileMenu.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -298,11 +263,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MenuStrip fileMenu;
         private System.Windows.Forms.Timer tmrRedraw;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sourceImageToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFitness;
@@ -314,6 +275,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button button_open;
     }
 }
 

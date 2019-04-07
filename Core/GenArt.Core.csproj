@@ -63,16 +63,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DNA\DnaBrush.cs" />
-    <Compile Include="DNA\DnaDrawing.cs" />
-    <Compile Include="DNA\DnaPoint.cs" />
-    <Compile Include="DNA\DnaPolygon.cs" />
-    <Compile Include="Classes\FileUtil.cs" />
-    <Compile Include="Classes\FitnessCalculator.cs" />
-    <Compile Include="Classes\Renderer.cs" />
-    <Compile Include="Classes\Serializer.cs" />
-    <Compile Include="Classes\Settings.cs" />
-    <Compile Include="Classes\Tools.cs" />
+    <Compile Include="MyDnaBrush.cs" />
+    <Compile Include="MyDnaDraw.cs" />
+    <Compile Include="MyDnaPoint.cs" />
+    <Compile Include="MyDnaPolygon.cs" />
+    <Compile Include="FileWorking.cs" />
+    <Compile Include="FitnessFunction.cs" />
+    <Compile Include="PolygonDrawing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

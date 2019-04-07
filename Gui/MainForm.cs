@@ -4,26 +4,29 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Threading;
 using System.Windows.Forms;
-using GenArt.AST;
+using GenArt;
 using GenArt.Classes;
 
 namespace GenArt
 {
     public partial class MainForm : Form
     {
-        public static Settings Settings;
-        private DnaDrawing currentDrawing;
+        
+        private MyDnaDrawing currentDrawing;
 
         private double errorLevel = double.MaxValue;
         private int generation;
-        private DnaDrawing guiDrawing;
+        private MyDnaDrawing guiDrawing;
         private bool isRunning;
         private DateTime lastRepaint = DateTime.MinValue;
         private int lastSelected;
         private TimeSpan repaintIntervall = new TimeSpan(0, 0, 0, 0, 0);
         private int repaintOnSelectedSteps = 3;
         private int selected;
-        
+
+        public static int MaxWidth = 512;
+        public static int MaxHeight = 512;
+
         private Color[,] sourceColors;
 
         private Thread thread;
@@ -31,9 +34,7 @@ namespace GenArt
         public MainForm()
         {
             InitializeComponent();
-            Settings = Serializer.DeserializeSettings();
-            if (Settings == null)
-                Settings = new Settings();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -41,9 +42,9 @@ namespace GenArt
             //to loading form
         }
 
-        private static DnaDrawing GetNewInitializedDrawing()
+        private static MyDnaDrawing GetNewInitializedDrawing()
         {
-            var drawing = new DnaDrawing();
+            var drawing = new MyDnaDrawing();
             drawing.Init();
             return drawing;
         }
@@ -58,7 +59,7 @@ namespace GenArt
 
             while (isRunning)
             {
-                DnaDrawing newDrawing;
+                MyDnaDrawing newDrawing;
                 lock (currentDrawing)
                 {
                     newDrawing = currentDrawing.Clone();
@@ -69,7 +70,7 @@ namespace GenArt
                 {
                     generation++;
 
-                    double newErrorLevel = FitnessCalculator.GetDrawingFitness(newDrawing, sourceColors);
+                    double newErrorLevel = FitnessFunction.GetDrawingFitness(newDrawing, sourceColors);
 
                     if (newErrorLevel <= errorLevel)
                     {
@@ -87,12 +88,12 @@ namespace GenArt
         //covnerts the source image to a Color[,] for faster lookup
         private void SetupSourceColorMatrix()
         {
-            sourceColors = new Color[Tools.MaxWidth,Tools.MaxHeight];
+            sourceColors = new Color[MaxWidth, MaxHeight];
             var sourceImage = this.sourceImage.Image as Bitmap;
 
-            for (int y = 0; y < Tools.MaxHeight; y++)
+            for (int y = 0; y < MaxHeight; y++)
             {
-                for (int x = 0; x < Tools.MaxWidth; x++)
+                for (int x = 0; x < MaxWidth; x++)
                 {
                     Color c = sourceImage.GetPixel(x, y);
                     sourceColors[x, y] = c;
@@ -197,7 +198,7 @@ namespace GenArt
             using (Graphics backGraphics = Graphics.FromImage(backBuffer))
             {
                 backGraphics.SmoothingMode = SmoothingMode.HighQuality;
-                Renderer.Render(guiDrawing, backGraphics, 1);
+                PolygonDrawing.draw(guiDrawing, backGraphics, 1);
 
                 e.Graphics.DrawImage(backBuffer, 0, 0);
             }
@@ -208,14 +209,16 @@ namespace GenArt
             Stop();
             string fileName = FileWorking.openFileName(FileWorking.imageType);
             sourceImage.Image = Image.FromFile(fileName);
-            Tools.MaxHeight = sourceImage.Height;
-            Tools.MaxWidth = sourceImage.Width;
+            MaxHeight = sourceImage.Height;
+            MaxWidth = sourceImage.Width;
             //set image
             splitContainer1.SplitterDistance = sourceImage.Width + 30;
         }
-        private void sourceImageToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void button_open_Click(object sender, EventArgs e)
         {
             OpenImage();
         }
+
     }
 }

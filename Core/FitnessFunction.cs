@@ -1,27 +1,28 @@
 ﻿using System.Drawing;
 using System.Drawing.Imaging;
-using GenArt.AST;
 
 namespace GenArt.Classes
 {
-    public static class FitnessCalculator
+    public static class FitnessFunction
     {
-        public static double GetDrawingFitness(DnaDrawing newDrawing, Color[,] sourceColors)
+        public static int MaxWidth = 512;
+        public static int MaxHeight = 512;
+        public static double GetDrawingFitness(MyDnaDrawing newDrawing, Color[,] sourceColors)
         {
             double error = 0;
 
-            using (var b = new Bitmap(Tools.MaxWidth, Tools.MaxHeight, PixelFormat.Format24bppRgb))
+            using (var b = new Bitmap(MaxWidth, MaxHeight, PixelFormat.Format24bppRgb))
             using (Graphics g = Graphics.FromImage(b))
             {
-                Renderer.Render(newDrawing, g, 1);
+                PolygonDrawing.draw(newDrawing, g, 1);
 
-                BitmapData bmd1 = b.LockBits(new Rectangle(0, 0, Tools.MaxWidth, Tools.MaxHeight), ImageLockMode.ReadOnly,
+                BitmapData bmd1 = b.LockBits(new Rectangle(0, 0, MaxWidth, MaxHeight), ImageLockMode.ReadOnly,
                                              PixelFormat.Format24bppRgb);
 
 
-                for (int y = 0; y < Tools.MaxHeight; y++)
+                for (int y = 0; y < MaxHeight; y++)
                 {
-                    for (int x = 0; x < Tools.MaxWidth; x++)
+                    for (int x = 0; x < MaxWidth; x++)
                     {
                         Color c1 = GetPixel(bmd1, x, y);
                         Color c2 = sourceColors[x, y];
