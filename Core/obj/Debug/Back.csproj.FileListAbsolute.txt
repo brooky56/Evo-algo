@@ -1,0 +1,6 @@
+C:\Users\Aidar\Documents\Evo-algo\Core\bin\Debug\GenArt.Core.dll
+C:\Users\Aidar\Documents\Evo-algo\Core\bin\Debug\GenArt.Core.pdb
+C:\Users\Aidar\Documents\Evo-algo\Core\obj\Debug\Back.csproj.CoreCompileInputs.cache
+C:\Users\Aidar\Documents\Evo-algo\Core\obj\Debug\GenArt.Core.dll
+C:\Users\Aidar\Documents\Evo-algo\Core\obj\Debug\GenArt.Core.pdb
+C:\Users\Aidar\Documents\Evo-algo\Core\obj\Debug\Back.csprojResolveAssemblyReference.cache

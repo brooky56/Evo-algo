@@ -19,7 +19,7 @@ namespace GenArt
         public static int AddPointMutationRate = 1500;
         public static int RemovePointMutationRate = 1500;
         public static int PointsMin;
-        public static int PointsPerPolygonMax = 10;
+        public static int PointsPerPolygonMax = 12;
         public static int PointsMax = 1500;
 
         //init polygon

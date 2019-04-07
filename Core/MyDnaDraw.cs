@@ -9,8 +9,8 @@ namespace GenArt
     {
         private static readonly Random random = new Random();
         //parametrs block
-        public static int AddPolygonMutationRate = 700;
-        public static int MovePolygonMutationRate = 700;
+        public static int AddPolygonMutationRate = 800;
+        public static int MovePolygonMutationRate = 800;
         public static int RemovePolygonMutationRate = 1500;
         public static int PolygonsMax = 255;
         public static int PolygonsMin;

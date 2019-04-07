@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using GenArt.Classes;
@@ -20,8 +21,9 @@ namespace GenArt
         private DateTime lastRepaint = DateTime.MinValue;
         private int lastSelected;
         private TimeSpan repaintIntervall = new TimeSpan(0, 0, 0, 0, 0);
-        private int repaintOnSelectedSteps = 3;
+        private int repaintOnSelectedSteps = 4;
         private int selected;
+
 
         public static int MaxWidth = 512;
         public static int MaxHeight = 512;
@@ -29,11 +31,13 @@ namespace GenArt
         private Color[,] sourceColors;
 
         private Thread thread;
+      
 
         public MainForm()
         {
             InitializeComponent();
             
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -69,7 +73,7 @@ namespace GenArt
                 {
                     generation++;
 
-                    double newErrorLevel = FitnessFunction.GetDrawingFitness(newDrawing, sourceColors);
+                    double newErrorLevel = FitnessFunction.getDrawingFitness(newDrawing, sourceColors);
 
                     if (newErrorLevel <= errorLevel)
                     {
@@ -146,10 +150,40 @@ namespace GenArt
             isRunning = false;
             tmrRedraw.Enabled = false;
 
+
+     
+
+
         }
 
+
+        /*
+        private void CreateSaveBitmap(Canvas canvas, string filename)
+        {
+            RenderTargetBitmap renderBitmap = new RenderTargetBitmap(
+             (int)canvas.Width, (int)canvas.Height,
+             96d, 96d, PixelFormats.Pbgra32);
+            // needed otherwise the image output is black
+            canvas.Measure(new Size((int)canvas.Width, (int)canvas.Height));
+            canvas.Arrange(new Rect(new Size((int)canvas.Width, (int)canvas.Height)));
+
+            renderBitmap.Render(canvas);
+
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            
+            encoder.Frames.Add(BitmapFrame.Create(renderBitmap));
+
+            using (FileStream file = File.Create(filename))
+            {
+                encoder.Save(file);
+            }
+        }*/
         private void tmrRedraw_Tick(object sender, EventArgs e)
         {
+            /*Bitmap bitmap = new Bitmap(genFrame.Width, genFrame.Height);
+            genFrame.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            bitmap.Save(@"C:\test.jpg", ImageFormat.Jpeg);*/
+
             if (currentDrawing == null)
                 return;
 

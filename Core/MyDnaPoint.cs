@@ -6,9 +6,10 @@ namespace GenArt
     public class MyDnaPoint
     {
        
-        public static int MovePointMaxMutationRate = 1500;
-        public static int MovePointMidMutationRate = 1500;
-        public static int MovePointMinMutationRate = 1500;
+        public static int MovePointMaxMutationRate = 1700;
+        public static int MovePointMidMutationRate = 1700;
+        public static int MovePointMinMutationRate = 1700;
+        //can make polygon from 3 edges to 20 edges
         public static int MovePointRangeMid = 20;
         public static int MovePointRangeMin = 3;
 
