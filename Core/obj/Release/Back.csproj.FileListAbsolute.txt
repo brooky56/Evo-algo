@@ -1,0 +1,6 @@
+C:\Users\Aidar\Documents\AI_GA\Core\bin\Release\GenArt.Core.dll
+C:\Users\Aidar\Documents\AI_GA\Core\bin\Release\GenArt.Core.pdb
+C:\Users\Aidar\Documents\AI_GA\Core\obj\Release\Back.csproj.CoreCompileInputs.cache
+C:\Users\Aidar\Documents\AI_GA\Core\obj\Release\GenArt.Core.dll
+C:\Users\Aidar\Documents\AI_GA\Core\obj\Release\GenArt.Core.pdb
+C:\Users\Aidar\Documents\AI_GA\Core\obj\Release\Back.csprojResolveAssemblyReference.cache

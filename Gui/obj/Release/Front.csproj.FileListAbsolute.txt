@@ -1,0 +1,13 @@
+C:\Users\Aidar\Documents\AI_GA\Gui\bin\Release\GenArt.exe.config
+C:\Users\Aidar\Documents\AI_GA\Gui\bin\Release\GenArt.exe
+C:\Users\Aidar\Documents\AI_GA\Gui\bin\Release\GenArt.pdb
+C:\Users\Aidar\Documents\AI_GA\Gui\bin\Release\GenArt.Core.dll
+C:\Users\Aidar\Documents\AI_GA\Gui\bin\Release\GenArt.Core.pdb
+C:\Users\Aidar\Documents\AI_GA\Gui\obj\Release\GenArt.Canvas.resources
+C:\Users\Aidar\Documents\AI_GA\Gui\obj\Release\GenArt.MainForm.resources
+C:\Users\Aidar\Documents\AI_GA\Gui\obj\Release\GenArt.Properties.Resources.resources
+C:\Users\Aidar\Documents\AI_GA\Gui\obj\Release\Front.csproj.GenerateResource.Cache
+C:\Users\Aidar\Documents\AI_GA\Gui\obj\Release\Front.csproj.CoreCompileInputs.cache
+C:\Users\Aidar\Documents\AI_GA\Gui\obj\Release\GenArt.exe
+C:\Users\Aidar\Documents\AI_GA\Gui\obj\Release\GenArt.pdb
+C:\Users\Aidar\Documents\AI_GA\Gui\obj\Release\Front.csprojResolveAssemblyReference.cache
