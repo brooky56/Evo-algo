@@ -12,7 +12,7 @@ Genetic algorithm for image evoluting
 - mutation function
 - selection that decreases the fintess score every genearting
 ## How to run .exe file to play with this project
-> Gui/bin/Release/GenArt.exe ;
+> Gui/bin/Release/GenArt.exe ; use test_512.jpg for open source image
 ## This drawing image project has their own NAME:
 # Cosmo-post-apocalyptic avant-garde
 - Why it is so:
