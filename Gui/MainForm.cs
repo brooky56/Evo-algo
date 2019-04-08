@@ -55,11 +55,12 @@ namespace GenArt
 
         private void StartEvolution()
         {
-            SetupSourceColorMatrix();
+            splitSourceImage();
             if (currentDrawing == null)
                 currentDrawing = GetNewInitializedDrawing();
             lastSelected = 0;
-
+            
+            int i = 0;
             while (isRunning)
             {
                 MyDnaDrawing newDrawing;
@@ -85,11 +86,14 @@ namespace GenArt
                         errorLevel = newErrorLevel;
                     }
                 }
+                
+                   
+                
             }
         }
 
         //covnerts the source image to a Color[,] for faster lookup
-        private void SetupSourceColorMatrix()
+        private void splitSourceImage()
         {
             sourceColors = new Color[MaxWidth, MaxHeight];
             var sourceImage = this.sourceImage.Image as Bitmap;
@@ -108,12 +112,12 @@ namespace GenArt
         private void btnStart_Click(object sender, EventArgs e)
         {
             if (isRunning)
-                Stop();
+                stop();
             else
-                Start();
+                start();
         }
 
-        private void Start()
+        private void start()
         {
             btnStart.Text = "Stop";
             isRunning = true;
@@ -141,7 +145,7 @@ namespace GenArt
             thread = null;
         }
 
-        private void Stop()
+        private void stop()
         {
             if (isRunning)
                 killThread();
@@ -150,10 +154,7 @@ namespace GenArt
             isRunning = false;
             tmrRedraw.Enabled = false;
 
-
-     
-
-
+            
         }
 
 
@@ -180,9 +181,7 @@ namespace GenArt
         }*/
         private void tmrRedraw_Tick(object sender, EventArgs e)
         {
-            /*Bitmap bitmap = new Bitmap(genFrame.Width, genFrame.Height);
-            genFrame.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
-            bitmap.Save(@"C:\test.jpg", ImageFormat.Jpeg);*/
+           
 
             if (currentDrawing == null)
                 return;
@@ -238,21 +237,35 @@ namespace GenArt
             }
         }
 
-        private void OpenImage()
+        private void openImage()
         {
-            Stop();
+            stop();
             string fileName = FileWorking.openFileName(FileWorking.imageType);
             sourceImage.Image = Image.FromFile(fileName);
             MaxHeight = sourceImage.Height;
             MaxWidth = sourceImage.Width;
             //set image
             splitContainer1.SplitterDistance = sourceImage.Width + 30;
+            button_open.Text = "Save image";
         }
 
         private void button_open_Click(object sender, EventArgs e)
         {
-            OpenImage();
+            if (isRunning)
+            {
+                Bitmap bitmap = new Bitmap(genFrame.Width, genFrame.Height);
+                genFrame.DrawToBitmap(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height));
+                bitmap.Save("test" + generation + ".jpg", ImageFormat.Jpeg);
+            }
+            else
+            {
+                button_open.Text = "Open image";
+                openImage();
+            }
         }
+      
+            
+      
 
     }
 }

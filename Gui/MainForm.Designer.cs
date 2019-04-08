@@ -2,10 +2,31 @@
 {
     partial class MainForm
     {
-     
+
+        private Canvas genFrame;
+        private System.Windows.Forms.PictureBox sourceImage;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer tmrRedraw;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFitness;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelGeneration;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelSelected;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelPolygons;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button button_open;
+        
         private System.ComponentModel.IContainer components = null;
 
-        
+  
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -27,7 +48,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button_open = new System.Windows.Forms.Button();
-            this.genFrame = new GenArt.Canvas();
+      
+            this.genFrame = new Canvas();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelFitness = new System.Windows.Forms.ToolStripStatusLabel();
@@ -130,6 +152,7 @@
             this.button_open.Text = "Open image";
             this.button_open.UseVisualStyleBackColor = false;
             this.button_open.Click += new System.EventHandler(this.button_open_Click);
+          
             // 
             // genFrame
             // 
@@ -254,27 +277,6 @@
             this.PerformLayout();
 
         }
-
-        
-
-        private Canvas genFrame;
-        private System.Windows.Forms.PictureBox sourceImage;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer tmrRedraw;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelFitness;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelGeneration;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelSelected;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelPolygons;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.Button button_open;
     }
 }
 
