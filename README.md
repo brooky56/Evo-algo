@@ -12,11 +12,11 @@ Genetic algorithm for image evoluting
 - mutation function
 - selection that decreases the fintess score every genearting
 ## How to run .exe file to play with this project
-> Gui/bin/Release/GenArt.exe ; use test_512.jpg for open source image
+> Gui/bin/Debug/GenArt.exe ; use test_512.jpg for open source image
 ## This drawing image project has their own NAME:
 # Cosmo-post-apocalyptic avant-garde
 - Why it is so:
   * Because the art for me, it is something that you can include your favorite things, add during doing you will enjoy it
   * So cosmo - beacause "StarTrek" - one of the best serial about space and discovery
   * Fallout - the best series of games about post-apocalyptic
-  * Codding - it is like an art when you creating code, and then it works)
+  * Codding - it is like an art when you creating code, and then it works)SD
